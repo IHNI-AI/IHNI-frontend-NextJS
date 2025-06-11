@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Database, Globe, BarChart3, TrendingUp, Eye, Search } from 'lucide-react';
 
@@ -22,7 +21,7 @@ const DataDrivenSection: React.FC = () => {
   }];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-background border-t border-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Data-Driven Intelligence</h2>

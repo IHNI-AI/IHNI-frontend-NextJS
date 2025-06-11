@@ -18,7 +18,7 @@ const TrendsSection: React.FC = () => {
   const { trends, loading, error } = useTrends(6); // fetch 6 trends for the landing page
 
   return (
-    <section className="py-20 bg-white border-t border-gray-100">
+    <section className="py-20 bg-background border-t border-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -34,14 +34,17 @@ const TrendsSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {!loading && !error && trends.map((trend) => (
-            <TrendCard
-              key={trend.id}
-              name={trend.keyword}
-              growth={((typeof trend.growth === 'number' ? trend.growth : Number(trend.growth) || 0) * 100)}
-              volume={trend.volume ?? 0}
-              sparkline={parseSparkline(trend.search_history)}
-              description={trend.description || ''}
+            <Link key={trend.id} href={`/trend/${trend.id}`} passHref legacyBehavior>
+              <a style={{ textDecoration: 'none' }}>
+            <TrendCard 
+                  name={trend.keyword}
+                  growth={((typeof trend.growth === 'number' ? trend.growth : Number(trend.growth) || 0) * 100)}
+                  volume={trend.volume ?? 0}
+                  sparkline={parseSparkline(trend.search_history)}
+                  description={trend.description || ''}
             />
+              </a>
+            </Link>
           ))}
         </div>
 

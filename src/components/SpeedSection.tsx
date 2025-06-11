@@ -22,7 +22,7 @@ const SpeedSection: React.FC = () => {
     color: 'bg-gray-400',
     icon: Clock
   }];
-  return <section className="py-20 bg-brand-cream">
+  return <section className="py-20 bg-background border-t border-gray-100">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">

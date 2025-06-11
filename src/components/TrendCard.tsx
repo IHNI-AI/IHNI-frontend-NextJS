@@ -44,7 +44,7 @@ const TrendCard: React.FC<TrendCardProps> = ({
 
   // Create a longer, more detailed description
   const extendedDescription = `${description} This emerging trend represents a significant opportunity in the current market landscape with growing user demand and increasing search volume across multiple demographics.`;
-  return <Card className="bg-white border border-gray-200 hover:shadow-lg hover:border-blue-600 transition-all duration-300 h-auto w-full overflow-hidden">
+  return <Card className="bg-card border border-gray-200 hover:shadow-lg hover:border-blue-600 transition-all duration-300 h-auto w-full overflow-hidden">
       <CardContent className="p-6">
         {/* Header with trend name */}
         <div className="flex justify-between items-start mb-4">

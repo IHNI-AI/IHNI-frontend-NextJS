@@ -5,10 +5,10 @@ import NetworkVisualization from './NetworkVisualization';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-cream py-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-16">
       {/* Announcement banner */}
       <div className="absolute top-20 left-0 w-full flex justify-center z-10">
-        <div className="bg-white py-2 px-4 rounded-full shadow-md flex items-center space-x-2">
+        <div className="bg-card py-2 px-4 rounded-full shadow-md flex items-center space-x-2">
           <span className="text-amber-500">✨</span>
           <span className="text-sm font-medium">12 App Ideas spoted today</span>
           <div className="w-px h-4 bg-gray-200 mx-2"></div>
@@ -17,19 +17,19 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="absolute left-0 bottom-0 w-full" style={{ height: '48%' }}>
-        <NetworkVisualization />
+      <NetworkVisualization />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-gray-800">Discover </span>
+            <span className="text-foreground">Discover </span>
             <span className="text-brand-blue"> App Ideas </span>
-            <span className="text-gray-800"> people really </span>
+            <span className="text-foreground"> people really </span>
             <span className="text-brand-blue"> Need </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-10">
+          <p className="text-xl md:text-2xl text-foreground mb-10">
            Not AI Generated. Data-driven App Ideas based on Real Problems, Real Demand, Real Data.
           </p>
           

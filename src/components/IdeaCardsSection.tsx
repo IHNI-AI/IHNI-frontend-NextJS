@@ -96,34 +96,34 @@ const featuredIdeas: AppIdea[] = [
 ];
 
 // Helper functions (copied from app-ideas.tsx)
-const formatVolume = (volume: number) => {
-  if (volume >= 1000000) return `${(volume / 1000000).toFixed(1)}M`;
-  if (volume >= 1000) return `${(volume / 1000).toFixed(1)}K`;
-  return volume.toString();
-};
-const calculateGrowth = (trendData: number[]) => {
-  if (trendData.length < 2) return 0;
-  const current = trendData[trendData.length - 1];
-  const previous = trendData[trendData.length - 2];
-  return previous > 0 ? (current - previous) / previous * 100 : 0;
-};
-const prepareChartData = (trendData: number[]) => {
-  return trendData.map((value, index) => ({
-    month: index,
-    volume: value
-  }));
-};
+  const formatVolume = (volume: number) => {
+    if (volume >= 1000000) return `${(volume / 1000000).toFixed(1)}M`;
+    if (volume >= 1000) return `${(volume / 1000).toFixed(1)}K`;
+    return volume.toString();
+  };
+  const calculateGrowth = (trendData: number[]) => {
+    if (trendData.length < 2) return 0;
+    const current = trendData[trendData.length - 1];
+    const previous = trendData[trendData.length - 2];
+    return previous > 0 ? (current - previous) / previous * 100 : 0;
+  };
+  const prepareChartData = (trendData: number[]) => {
+    return trendData.map((value, index) => ({
+      month: index,
+      volume: value
+    }));
+  };
 
 const IdeaCardsSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-brand-cream to-gray-50 relative">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Featured <span className="text-brand-blue">App Ideas</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground max-w-3xl mx-auto">
             Discover innovative app concepts backed by real market data and user demand
           </p>
         </div>
@@ -141,7 +141,7 @@ const IdeaCardsSection: React.FC = () => {
         </div>
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <p className="text-gray-600 mb-6">
+          <p className="text-foreground mb-6">
             We have <span className="font-bold text-brand-blue">1,423 curated app ideas</span> waiting for you
           </p>
           <a href="/app-ideas" onClick={() => window.scrollTo(0, 0)}>

@@ -183,21 +183,21 @@ const AppIdeas: React.FC = () => {
   const totalPages = Math.ceil(filteredAndSortedIdeas.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedIdeas = filteredAndSortedIdeas.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-  return <div className="min-h-screen bg-gradient-to-b from-brand-cream to-white">
+  return <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       
       <div className="pt-20 pb-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-md mb-6">
+            <div className="inline-flex items-center space-x-2 bg-card px-4 py-2 rounded-full shadow-md mb-6">
               <TrendingUp className="w-5 h-5 text-brand-blue" />
-              <span className="text-sm font-medium text-gray-700">App Ideas</span>
+              <span className="text-sm font-medium text-foreground">App Ideas</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gray-800">Discover Your </span>
+              <span className="text-foreground">Discover Your </span>
               <span className="text-brand-blue">Next Big Idea</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Browse through curated app ideas, complete with market insights and trend analysis to kickstart your next project.
             </p>
           </div>

@@ -174,23 +174,23 @@ const AllIdeas: React.FC = () => {
   const paginatedTrends = filteredAndSortedTrends.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-brand-cream to-white">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       
       <div className="pt-20 pb-20">
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-md mb-6">
+            <div className="inline-flex items-center space-x-2 bg-card px-4 py-2 rounded-full shadow-md mb-6">
               <TrendingUp className="w-5 h-5 text-brand-blue" />
-              <span className="text-sm font-medium text-gray-700">Market Trends</span>
+              <span className="text-sm font-medium text-foreground">Market Trends</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gray-800">Trending </span>
+              <span className="text-foreground">Trending </span>
               <span className="text-brand-blue">App-related</span>
-              <span className="text-gray-800"> Opportunities</span>
+              <span className="text-foreground"> Opportunities</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Real-time data on emerging market trends for your own ideation process. Act fast on opportunities before they become mainstream.
             </p>
           </div>
@@ -263,13 +263,17 @@ const AllIdeas: React.FC = () => {
           {paginatedTrends.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {paginatedTrends.map(trend => (
+                <Link key={trend.id} href={`/trend/${trend.id}`} passHref legacyBehavior>
+                  <a style={{ textDecoration: 'none' }}>
                 <TrendCard 
-                  key={trend.id} 
                   name={trend.trendName} 
                   description={trend.description} 
                   sparkline={trend.trendData} 
                   growth={calculateGrowth(trend.trendData)} 
+                      volume={trend.trendData[trend.trendData.length - 1] || 0}
                 />
+                  </a>
+                </Link>
               ))}
             </div>
           ) : (
